@@ -1,13 +1,10 @@
 <?php
-	require 'controller/index.php';
 
-	echo '<h1 style="text-align: center;">HOME SWEET HOME</h1>';
+	require_once 'controller/controller.php';
+	require_once 'view/header.php';
+	require_once 'view/body.php';
+	require_once 'view/build_page.php';
 
-	if (isset($_GET['action'])) {
-		if ($_GET['action'] == 'cart') {
-			cart();	
-		} else {
-			notFound();
-		}
-	}
+	router();
+	build_page();
 ?>
