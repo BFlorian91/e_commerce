@@ -1,0 +1,76 @@
+body {
+	background-image: url("../img/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+}
+
+.header {
+	display: flex;
+	background-color: pink;
+	width: 100%;
+	height: 210px;
+	margin: 0;
+}
+
+#website_name {
+	font: 50px new courier, serif;
+	margin: auto;
+}
+
+#cart {
+	position: sticky;
+	left: 100%;
+	margin: 20px;
+}
+
+#cart img {
+	height: 42px;
+}
+
+#login {
+	position: sticky;
+	margin: 20px;
+	left: 89%;
+}
+
+.button-loggin {
+	border: 2px solid green;
+	background-color: none;
+	color: green;
+	padding: 10px 15px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.button-loggin:hover {
+	background-color: green;
+	color: white;
+}
+
+#body {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+}
+
+#body .left-column {
+	min-width: 250px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#body .main-box {
+	width: 100%;
+	height: 100%;
+}
+
+.box {
+	border-radius: 10px;
+	background-color: pink;
+	margin: 5px;
+}
+
+
