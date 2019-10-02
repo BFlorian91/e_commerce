@@ -1,10 +1,9 @@
 <?php
 
 	function cart() {
-		require('model/cart.php');
+		require 'model/cart.php';
 	}
 
 	function notFound() {
-		require('model/404.php');
+		require 'model/404.php';
 	}
-?>
