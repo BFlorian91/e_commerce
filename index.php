@@ -1,5 +1,5 @@
 <?php
-	require('controller/index.php');
+	//require('controller/index.php');
 
 	echo '<h1>HOME SWEET HOME</h1>';
 
