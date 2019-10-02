@@ -1,4 +1,13 @@
 <?php
 	// call page login in view;
-	echo "it's CART PAGE LUUL<br />";
+function display_login() {
+	global $database;
+	$datas = array();
+
+	$request = $datas->query('SELECT * FROM test');
+	while ($data = $request->fetch()) {
+		$datas = $data;
+	}
+	return $datas;
+}
 ?>
