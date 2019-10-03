@@ -18,8 +18,10 @@
 	die("Invalid request : " . mysql_error());
 	else {
 		while ($row = mysqli_fetch_array($res)) {
+			echo "<pre>";
   	  echo $row['name'] . "<br/>";
 			echo $row['pass'] . "<br/>" . "<br/>";
+			echo "</pre>";
 		}	
 	}
 mysqli_close($db);
