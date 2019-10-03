@@ -28,8 +28,9 @@
 							'color3' => 'green',
 							'color4' => 'blue',
 							'color5' => 'purple',
-							'color6' => 'multi-colored',
-							'color6' => 'red',
+							'color6' => 'yellow',
+							'color7' => 'red',
+							'color8' => 'multi-colored',
 							'taste1' => 'sweet',
 							'taste2' => 'sour',
 							'look1' => 'hairy'
@@ -56,50 +57,7 @@
 				</div>
 				<div id="articles-display">
 				<?PHP
-						$articles = array(
-							$tagada = array(
-								'name' => 'fraises tagada',
-								'price' => '1,70',
-								'url' => 'tagada.jpg',
-							),
-							$banane = array(
-								'name' => 'bonbon banane',
-								'price' => '3,90',
-								'url' => 'bams.jpg'
-							),
-							$unicorne = array(
-								'name' => 'unicorne',
-								'price' => '1999',
-								'url' => 'unicorne.jpg',
-								'multiple-colors' => 3,
-								'color' => 'pink blue purple'
-							),
-							$unicorne = array(
-								'name' => 'unicorne',
-								'price' => '1999',
-								'url' => 'unicorne.jpg',
-								'multiple-colors' => '3',
-								'color' => 'pink blue purple'
-
-							),
-							$unicorne = array(
-								'name' => 'unicorne',
-								'price' => '1999',
-								'url' => 'unicorne.jpg',
-								'multiple-colors' => '3',
-								'color' => 'pink blue purple'
-
-							),
-							$unicorne = array(
-								'name' => 'unicorne',
-								'price' => '1999',
-								'url' => 'unicorne.jpg',
-								'multiple-colors' => '3',
-								'color' => 'pink blue purple'
-
-							)
-
-						);
+						include	 '../datas/items.php';
 						//NEED TO CHECK AND ONLY ARTICLE WHO HAVE CHECKBOXES ATRIBUTES
 						//NEED TO CHECK SORTBY AND SORT ARTICLES ACCORDING TO IT
 						foreach ($articles as $article) {
@@ -116,7 +74,7 @@
 									}
 								$html_article .= "</form></br>";
 							}
-							$html_article .= "<img alt=\"" . $article['name'] . "\" src=\"../img/" . $article['url'] . "\">";
+							$html_article .= "<img alt=\"" . $article['name'] . "\" src=\"../img/items/" . $article['url'] . "\">";
 							$html_article .= "<div class=\"add-to-cart\">";
 							$html_article .= "<form action=\"drop.php\" method=\"post\">";
 							$html_article .= "<input id=\"drop\" type=\"submit\" name=\"drop\" value=\"" . $article['name'] . "\"></form>";
