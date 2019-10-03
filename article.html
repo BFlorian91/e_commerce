@@ -1,0 +1,13 @@
+<div class="article">
+	<p class="article-name">$articlename</p>
+	<img alt=$article_name src=$img_article_url>
+	<div class="add-to-cart">
+		<form class="drop" action="drop.php" method="post">
+			<input type="submit" name="drop" value=$articlename>
+		</form>
+		<p class="price">$article_price</p>
+		<form class="add" action="add.php" method="post">
+			<input type="submit" name="add" value=$articlename>
+		</form>
+	</div>
+</div>

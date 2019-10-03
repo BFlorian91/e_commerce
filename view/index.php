@@ -3,13 +3,16 @@
 		<meta charset="UTF-8" />
 		<title>The Rainbow Market</title>
 		<link rel="stylesheet" href="../css/home.css">
+		</style>
 	</head>
 	<body>
 		<div class="header">
-			<p id="cart"><a href="cart.html">
-				<img alt="cart" src="../img/cart.png">
-			</a></p>
-			<a href="login.html" id="login"><button class="button-loggin">login</button></a>
+			<div id="head-opt">
+				<a href="login.html" id="login"><button class="button-loggin">login</button></a>
+				<p id="cart">
+					<a href="cart.html"><img alt="cart" src="../img/cart.png"></a>
+				</p>
+			</div>
 			<div id="website_name">The Rainbow Market</div>
 		</div>
 		<div id="body">
@@ -25,6 +28,7 @@
 							'color3' => 'green',
 							'color4' => 'blue',
 							'color5' => 'purple',
+							'color6' => 'multi-colored',
 							'color6' => 'red',
 							'taste1' => 'sweet',
 							'taste2' => 'sour',
@@ -41,12 +45,31 @@
 				</div>
 			</div>
 			<div class="box main-box">
-				<div class="dropdown">
-					<button>Sort by price:</button>
-					<form class="sortby" action="sortby.php" method="post">
-						<input type="submit" name="sortby1" value="low to high"><br>
-						<input type="submit" name="sortby2" value="high to low"><br>
-					</form>
+				<div id="main-opt">
+					<div class="dropdown">
+						<button>Sort by price:</button>
+						<form class="sortby" action="sortby.php" method="post">
+							<input type="submit" name="sortby1" value="low to high"><br>
+							<input type="submit" name="sortby2" value="high to low"><br>
+						</form>
+					</div>
+				</div>
+				<div id="articles-display">
+				<?PHP
+						//NEED TO CHECK AND ONLY ARTICLE WHO HAVE CHECKBOXES ATRIBUTES
+						//NEED TO CHECK SORTBY AND SORT ARTICLES ACCORDING TO IT
+						foreach ($articles as $article) {
+							html_element .= "<div class=\"article\">";
+							html_element .= "<p class=\"article-name\">" . $article['name'] . "</p>";
+							html_element .= "<img alt=\"" . $article['name'] . "\" src=\"../img/" $article['url'] . "\">";
+							html_element .= "div class=\"add-to-cart\">";
+							html_element .= "<form class=\"drop\" action=\"drop.php\" method=\"post\">";
+							html_element .= "<input type=\"submit\" name=\"drop\" value=\"" . $article['name'] . "\"></form>";
+							html_element .= "<p class=\"price\">" . $article['price'] . "</p>";
+							html_element .= "<form class=\"add\" action=\"add.php\" method=\"post\">";
+							html_element .= "<input type=\"submit\" name=\"add\" value=\"" . $article['name'] . "\"></form></div></div>";
+						}
+				?>
 				</div>
 			</div>
 		</div>
