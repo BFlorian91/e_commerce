@@ -56,19 +56,75 @@
 				</div>
 				<div id="articles-display">
 				<?PHP
+						$articles = array(
+							$tagada = array(
+								'name' => 'fraises tagada',
+								'price' => '1,70',
+								'url' => 'tagada.jpg',
+							),
+							$banane = array(
+								'name' => 'bonbon banane',
+								'price' => '3,90',
+								'url' => 'bams.jpg'
+							),
+							$unicorne = array(
+								'name' => 'unicorne',
+								'price' => '1999',
+								'url' => 'unicorne.jpg',
+								'multiple-colors' => 3,
+								'color' => 'pink blue purple'
+							),
+							$unicorne = array(
+								'name' => 'unicorne',
+								'price' => '1999',
+								'url' => 'unicorne.jpg',
+								'multiple-colors' => '3',
+								'color' => 'pink blue purple'
+
+							),
+							$unicorne = array(
+								'name' => 'unicorne',
+								'price' => '1999',
+								'url' => 'unicorne.jpg',
+								'multiple-colors' => '3',
+								'color' => 'pink blue purple'
+
+							),
+							$unicorne = array(
+								'name' => 'unicorne',
+								'price' => '1999',
+								'url' => 'unicorne.jpg',
+								'multiple-colors' => '3',
+								'color' => 'pink blue purple'
+
+							)
+
+						);
 						//NEED TO CHECK AND ONLY ARTICLE WHO HAVE CHECKBOXES ATRIBUTES
 						//NEED TO CHECK SORTBY AND SORT ARTICLES ACCORDING TO IT
 						foreach ($articles as $article) {
-							html_element .= "<div class=\"article\">";
-							html_element .= "<p class=\"article-name\">" . $article['name'] . "</p>";
-							html_element .= "<img alt=\"" . $article['name'] . "\" src=\"../img/" $article['url'] . "\">";
-							html_element .= "div class=\"add-to-cart\">";
-							html_element .= "<form class=\"drop\" action=\"drop.php\" method=\"post\">";
-							html_element .= "<input type=\"submit\" name=\"drop\" value=\"" . $article['name'] . "\"></form>";
-							html_element .= "<p class=\"price\">" . $article['price'] . "</p>";
-							html_element .= "<form class=\"add\" action=\"add.php\" method=\"post\">";
-							html_element .= "<input type=\"submit\" name=\"add\" value=\"" . $article['name'] . "\"></form></div></div>";
+							$html_article .= "<div class=\"article\">";
+							$html_article .= "<p class=\"article-name\">" . $article['name'] . "</p>";
+							if ($article['multiple-colors'])
+							{
+								$html_article .= "<form id=\"color-form\" action=\"color_opt.php\" method=\"post\">";
+								$colors = explode(' ', $article['color']);
+								$i = 1;
+								foreach ($colors as $color) {
+									$html_article .= "<input class=\"color-opt\" type=\"submit\" name=\"color" . $i ."\" value=\"" . $color . "\" style=\"background-color: " . $color . "\">";
+									$i++;
+									}
+								$html_article .= "</form></br>";
+							}
+							$html_article .= "<img alt=\"" . $article['name'] . "\" src=\"../img/" . $article['url'] . "\">";
+							$html_article .= "<div class=\"add-to-cart\">";
+							$html_article .= "<form action=\"drop.php\" method=\"post\">";
+							$html_article .= "<input id=\"drop\" type=\"submit\" name=\"drop\" value=\"" . $article['name'] . "\"></form>";
+							$html_article .= "<p class=\"price\">" . $article['price'] . " €</p>";
+							$html_article .= "<form action=\"add.php\" method=\"post\">";
+							$html_article .= "<input id=\"add\" type=\"submit\" name=\"add\" value=\"" . $article['name'] . "\"></form></div></div>";
 						}
+						echo $html_article . '<br />';
 				?>
 				</div>
 			</div>
