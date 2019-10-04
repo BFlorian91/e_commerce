@@ -29,11 +29,11 @@
       $html_element .= "<form class=\"sortby\" action=\"sortby.php\" method=\"post\">";
       $html_element .= "<input type=\"submit\" name=\"sortby1\" value=\"low to high\"><br>";
       $html_element .= "<input type=\"submit\" name=\"sortby2\" value=\"high to low\"><br>";
-      $html_element .= "</form>";
-      $html_element .= "</div>";
+      $html_element .= "</form>";
+      $html_element .= "</div>";
       $html_element .= $products;
-      $html_element .= "</div>";
-      $html_element .= "</div>";
+      $html_element .= "</div>";
+      $html_element .= "</div>";
       return $html_element;
     }
 ?>

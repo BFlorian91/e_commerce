@@ -1,16 +1,26 @@
 <?php
 
 	function router() {
-	
+		$db = connectionToBdd();
 		switch ($_GET['action']) {
-		case 'cart':
-			echo 'page cart';
+		case 'sign_up':
+			$ctrl .= sign_up($db);
 			break;
 		case 'login':
-			echo 'page login';
+			$ctrl .= sign_in($db);
+			break;
+		case 'cart':
+			$ctrl .= cart();
+			break;
+		case 'panel':
+			$ctrl .= set_article_in_shop($db);
+			break;
+		case 'home':
+			$ctrl .= get_article_in_shop($db);
 			break;
 		default:
-			echo 'index';
+			$ctrl .= get_article_in_shop($db);
 			break;
 		}
+		return $ctrl;
 	}
