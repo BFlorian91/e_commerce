@@ -1,16 +1,17 @@
 <?php
 
 	function router() {
+		$db = connect_to_db();
 	
 		switch ($_GET['action']) {
-		case 'cart':
-			echo 'page cart';
+		case 'signup':
+			return signup($db);	
 			break;
 		case 'login':
 			echo 'page login';
 			break;
 		default:
-			echo 'index';
+			return homeContent();
 			break;
 		}
 	}
