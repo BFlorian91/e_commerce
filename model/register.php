@@ -1,28 +1,18 @@
 <?php
 
-//function userAlreadyExists($db) {
+function userAlreadyExists($db) {
 
-	//$username = $_POST['name'];
-	//$query = mysqli_prepare($db, "SELECT * FROM users WHERE username = '$username'");
-	//mysqli_stmt_bind_param("s", $username);
-	//mysqli_stmt_execute($query);
-	//// stock le result
-	//mysqli_stmt_store_result($query);
+	$name = $_POST['name'];
+	$res = mysqli_query($db, "SELECT name FROM users WHERE name = '$name'");
+	$data = mysqli_fetch_array($res, MYSQLI_NUM);
+		return $data[0];
+}
 
-	//// Return 1 si present dans la db, 0 si absent; 
-	//if (mysqli_stmt_num_rows()) {
-		//return true;
-	//} else {
-		//return false;
-	//}
-	//mysqli_stmt_close($query);
-//}
 
 function signup($db) {
-	//if (userAlreadyExists($db)) {
-		
-		//return signup_form();
-	//}
+
+	$db_user = userAlreadyExists($db);
+	//var_dump($db_user);
 	if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass'])) {
 
 		$name = $_POST['name'];
@@ -31,18 +21,19 @@ function signup($db) {
 
 		$query = mysqli_prepare($db, "INSERT INTO users(name, email, pass) VALUES (?, ?, ?);");
 		mysqli_stmt_bind_param($query, "sss", $name, $email, $pass_hash);
-		mysqli_stmt_execute($query);
+		if ($db_user != $_POST['name']) {
+			mysqli_stmt_execute($query);
+		} else {
+			return error_("Username already exist !").signup_form();
+		}
 		mysqli_stmt_close($query);
 
-		echo "<pre>";
-		var_dump($db);
+		//echo "<pre>";
+		//var_dump($db);
 		//var_dump($name, $pass_hash);	
 		//var_dump($query);
-		echo "</pre>";
-
-		if (!mysqli_query($db, $query)) {
-			echo "MYSQL ERROR: " . $query . "<br>" . mysqli_error($db);
-		}
+		//echo "</pre>";
+		return (homeContent());
 	} else {
 		return signup_form();	
 	}
