@@ -1,6 +1,6 @@
 <?php
 
-function signin($db) {
+function action_signin($db) {
 
 	if (isset($_POST["name"]) && isset($_POST["pass"])) {
 		
@@ -12,7 +12,9 @@ function signin($db) {
 		//var_dump($username, $datas[0]);
 		if ($datas[0] == $username) {
 			if (password_verify($password, $datas[1])) {
-				return "<h3 style=\"color: green\">You're loggued ! " . $datas[0] . "</h3>";
+				session_start();
+				$_SESSION['username'] = $datas[0];
+				return "<h3 style=\"color: green; font-family: Arial;\">You're successfuly loggued ! " . $datas[0] . "</h3>" . homeContent();
 			} else {
 				return error_("Bad password") . signin_form();
 			}
