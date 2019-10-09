@@ -8,7 +8,7 @@
 			return signup($db);	
 			break;
 		case 'login':
-			echo 'page login';
+			return signin($db);
 			break;
 		default:
 			return homeContent();

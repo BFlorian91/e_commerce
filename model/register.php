@@ -4,8 +4,8 @@ function userAlreadyExists($db) {
 
 	$name = $_POST['name'];
 	$res = mysqli_query($db, "SELECT name FROM users WHERE name = '$name'");
-	$data = mysqli_fetch_array($res, MYSQLI_NUM);
-		return $data[0];
+	$datas = mysqli_fetch_array($res, MYSQLI_NUM);
+		return $datas[0];
 }
 
 

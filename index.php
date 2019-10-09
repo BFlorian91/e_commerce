@@ -8,6 +8,7 @@
 	require_once 'view/error.php';
 	require_once 'model/index.php';
 	require_once 'model/register.php';
+	require_once 'model/login.php';
 	require_once 'controller/controller.php';
 
 	$content = router();
