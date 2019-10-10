@@ -11,7 +11,8 @@
 			return action_signin($db);
 			break;
 		case 'logout':
-			return action_logout();
+			//return action_logout();
+			return homeContent();
 			break;
 		default:
 			return homeContent();

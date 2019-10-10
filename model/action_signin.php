@@ -12,7 +12,8 @@ function action_signin($db) {
 		//var_dump($username, $datas[0]);
 		if ($datas[0] == $username) {
 			if (password_verify($password, $datas[1])) {
-				$_SESSION['username'] = $data[0];
+				session_start();
+				$_SESSION['username'] = $username;
 				return "<h3 style=\"color: green\">You're loggued ! " . $datas[0] . "</h3>" . homeContent();
 			} else {
 				return error_("Bad password") . signin_form();
