@@ -9,7 +9,7 @@ function userAlreadyExists($db) {
 }
 
 
-function signup($db) {
+function action_signup($db) {
 
 	$db_user = userAlreadyExists($db);
 	//var_dump($db_user);

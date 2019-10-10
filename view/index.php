@@ -1,5 +1,6 @@
 <?php
     function homeContent($products = null) {
+
       $value = array(
         'color1' => 'pink',
         'color2' => 'orange',
@@ -33,6 +34,7 @@
       $html_element .= $products;
       $html_element .= "</div>";
       $html_element .= "</div>";
+
       return $html_element;
     }
 ?>
