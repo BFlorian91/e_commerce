@@ -7,6 +7,7 @@
 	require_once 'view/signup_form.php';
 	require_once 'view/signin_form.php';
 	require_once 'view/error.php';
+	require_once 'view/success.php';
 	require_once 'model/connect_to_db.php';
 	require_once 'model/action_signup.php';
 	require_once 'model/action_signin.php';

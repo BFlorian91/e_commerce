@@ -1,5 +1,5 @@
 body {
-    background: #282C34;
+    background: #1F2123;
     margin: 0;
     padding: 0;
 }
@@ -18,16 +18,20 @@ body {
     flex-grow: 1;
     text-decoration: none;
     font-size: 32px;
-    color: #61DAFB;
+    color: rgb(209, 209, 209);
 }
 
 .button_menu {
-    width: 65px;
+    width: 100px;
     height: 30px;
     border: solid 1px #222222;
+    border-radius: 2px;
+    box-shadow: 1px 2px 4px #777;
+    background-color: #1E2022;
     text-decoration: none;
     color: white;
     padding: 10px;
+    margin-right: 15px;
 }
 
 #cart {
@@ -36,7 +40,48 @@ body {
     color: white;
 }
 
+/* ERROR and SUCCESS*/
 
+.error {
+    text-align: center;
+    
+}
+.error h3 {
+    color: red;
+    font-weight: bold;
+    font-family: Arial;
+
+    animation: fade-in-out 6s ease;
+    opacity: 0;
+}
+
+.success {
+    text-align: center;
+    
+}
+.success h3 {
+    color: green;
+    font-weight: bold;
+    font-family: Arial;
+
+    animation: fade-in-out 6s ease;
+    opacity: 0;
+}
+
+@keyframes fade-in-out {
+    0%, 100% {
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    33.33% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 0;
+    }
+}
 
 /********* FORM *********/
 
@@ -60,7 +105,8 @@ body {
 
     width: 600px;
     height: 400px;
-    background-color: rgb(249, 249, 249, 0.05);
+    background-color: #1E2022;
+    box-shadow: 3px 3px 5px #777;
     font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 7px;
@@ -71,16 +117,20 @@ body {
     height: 60px;
     margin-top: 15px;
     text-align: center;
-	font-size: 14px;
+    font-size: 14px;
+    border: 1px solid #777;
+    color: white;
+    background-color: #222222;
 }
 
 .submit_button {
     margin-top: 15px;
     width: 80%;
     height: 40px;
-	background: white;
+    background-color: #1F2123;
+    border: 1px solid #777;
+    color: white;
 	border-radius: 2px;
-	border: none;
 	font-size: 14px;
 }
 
