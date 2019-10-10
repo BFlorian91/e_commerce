@@ -14,7 +14,7 @@
 			$html_element .= '<a href="index.php?action=login" class="button_menu">Sing in</a>';
 			$html_element .= '</div>';
 		} else {
-			$html_element .= 'Hello ' . $_SESSION['username'] . ' '; 
+			$html_element .= '<p id="hi">Hello ' . ucfirst($_SESSION['username']) . '</p>'; 
 			$html_element .= '<a href="index.php?action=logout" class="button_menu">Logout</a>';
         }
 		$html_element .= '<a href="index.php?action=cart"><img id="cart" alt="cart" src="https://purepng.com/public/uploads/large/purepng.com-shopping-cartshoppingcarttrolleycarriagebuggysupermarkets-1421526532323sy0um.png"></a>';

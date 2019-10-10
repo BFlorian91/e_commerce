@@ -23,6 +23,7 @@ function action_signup($db) {
 		mysqli_stmt_bind_param($query, "sss", $name, $email, $pass_hash);
 		if ($db_user != $_POST['name']) {
 			mysqli_stmt_execute($query);
+			$success = success_("Account created !");
 		} else {
 			return error_("Username already exist !").signup_form();
 		}
@@ -33,7 +34,7 @@ function action_signup($db) {
 		//var_dump($name, $pass_hash);	
 		//var_dump($query);
 		//echo "</pre>";
-		return (homeContent());
+		return ($success . homeContent());
 	} else {
 		return signup_form();	
 	}
