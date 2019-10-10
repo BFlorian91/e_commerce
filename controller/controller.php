@@ -5,10 +5,13 @@
 	
 		switch ($_GET['action']) {
 		case 'signup':
-			return signup($db);	
+			return action_signup($db);	
 			break;
 		case 'login':
-			return signin($db);
+			return action_signin($db);
+			break;
+		case 'logout':
+			return action_logout();
 			break;
 		default:
 			return homeContent();
