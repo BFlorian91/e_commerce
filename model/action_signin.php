@@ -13,7 +13,8 @@ function action_signin($db) {
 		if ($datas[0] == $username) {
 			if (password_verify($password, $datas[1])) {
 				session_start();
-				$_SESSION['username'] = $username;
+				//$_SESSION['username'] = $username;
+				setcookie ("username", $username, time() + (365*24*3600));
 				return success_("You are successfuly loggued !", $data[0]) . homeContent();
 			} else {
 				return error_("Bad password") . signin_form();

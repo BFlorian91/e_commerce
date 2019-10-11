@@ -11,8 +11,10 @@
 			return action_signin($db);
 			break;
 		case 'logout':
-			//return action_logout();
-			return homeContent();
+			return action_logout();
+			break;
+		case 'panel':
+			return add_to_shop();
 			break;
 		default:
 			return homeContent();
